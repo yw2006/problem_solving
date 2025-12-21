@@ -112,7 +112,7 @@ Node* Findmax(Node* r)
 			{
 				Node* max = Findmax(r->left);
 				r->data = max->data;
-			   r->left=	Delete(r->left, max->data);
+			   	r->left= Delete(r->left, max->data);
 				
 			}
 

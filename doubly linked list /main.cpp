@@ -23,16 +23,15 @@ public:
         return true;
     }
     bool del_begin(){
-         if (head == NULL) {
+        if (head == NULL) {
         return false;  
-         }
+        }
         Node *temp=head ;
         head = temp->next;
         head->prev =NULL;
         delete temp;
         return true;
-    }
-    
+    }   
     bool add_end(int value){
         if(head == NULL){
             return add_begin(value);
@@ -111,4 +110,25 @@ public:
         return true;
         
     }
+    void traverse(){
+        if (head == NULL) {
+        return ;  
+        }
+        Node* temp=head;
+        while (temp !=NULL)
+        {
+            cout << temp->data << endl;
+            temp = temp->next; 
+        }
+
+    }
 };
+int main(){
+    DoubleLinkedList dl;
+    dl.add_begin(10);
+    dl.add_begin(20);
+    dl.add_begin(30);
+    dl.add_begin(40);
+    dl.add_end(50);
+    dl.traverse();
+}
